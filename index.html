@@ -117,6 +117,78 @@ header.scrolled{background:rgba(7,17,31,0.82);backdrop-filter:blur(14px);border-
   .nav-cta{background:linear-gradient(120deg,var(--orange),var(--blue));color:white;padding:10px 20px;border-radius:999px;font-size:13.5px;font-weight:700;transition:transform .25s ease, box-shadow .25s ease;}
   .nav-cta:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(249,115,22,0.24);}
 
+  .nav-toggle-btn{
+    display:none;
+    background:rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.18);
+    color:#fff;
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    z-index:210;
+    transition:background .2s ease;
+  }
+  .nav-toggle-btn:hover{background:rgba(255,255,255,0.2);}
+  .nav-toggle-btn svg{width:22px;height:22px;}
+  .mobile-menu-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(7,17,31,0.96);
+    backdrop-filter:blur(24px);
+    -webkit-backdrop-filter:blur(24px);
+    z-index:205;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:28px;
+    padding:40px 24px;
+    opacity:0;
+    pointer-events:none;
+    transform:translateY(-16px);
+    transition:opacity .35s cubic-bezier(.2,.7,.2,1), transform .35s cubic-bezier(.2,.7,.2,1);
+  }
+  .mobile-menu-overlay.open{
+    opacity:1;
+    pointer-events:auto;
+    transform:translateY(0);
+  }
+  .mobile-menu-links{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:22px;
+    font-size:19px;
+    font-weight:700;
+    color:#fff;
+    text-align:center;
+  }
+  .mobile-menu-links a{
+    color:rgba(255,255,255,0.85);
+    transition:color .2s ease, transform .2s ease;
+  }
+  .mobile-menu-links a:hover, .mobile-menu-links a:active{
+    color:var(--orange);
+    transform:scale(1.05);
+  }
+  .mobile-menu-cta{
+    margin-top:10px;
+    background:linear-gradient(120deg,var(--orange),var(--blue));
+    color:white;
+    padding:14px 34px;
+    border-radius:999px;
+    font-size:15.5px;
+    font-weight:700;
+    box-shadow:0 10px 26px rgba(249,115,22,0.3);
+  }
+  @media (max-width:1080px){
+    .nav-toggle-btn{display:flex;}
+    .nav-cta{display:none;}
+  }
+
   /* ---------- hero ---------- */
   .hero{
     min-height:100svh;position:relative;background:linear-gradient(135deg,var(--navy-deep),var(--blue-dark) 55%,var(--navy));color:#fff;
@@ -490,7 +562,56 @@ header.scrolled{background:rgba(7,17,31,0.82);backdrop-filter:blur(14px);border-
   .ai-input{display:flex;border-top:1px solid var(--glass-dark-b);}
   .ai-input input{flex:1;background:transparent;border:none;padding:14px 16px;color:#fff;font-size:13px;outline:none;}
   .ai-input input::placeholder{color:rgba(255,255,255,0.35);}
-  .ai-input button{background:none;border:none;color:var(--orange);padding:0 16px;cursor:pointer;}
+  /* ---------- Comprehensive Mobile Responsive Tweaks ---------- */
+  @media (max-width: 768px) {
+    .wrap { padding: 0 20px; }
+    section { padding: 48px 0; }
+    .hero { padding-top: 100px; min-height: auto; padding-bottom: 50px; }
+    .hero h1 { font-size: clamp(30px, 7.5vw, 44px); }
+    .hero p.lede { font-size: 15px; margin-top: 14px; }
+    .hero-actions { margin-top: 24px; flex-direction: column; width: 100%; }
+    .hero-actions a { width: 100%; text-align: center; justify-content: center; min-height: 48px; }
+    .hero-badges { margin-top: 30px; gap: 20px; }
+
+    .about-stats { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .about-stats .s { padding: 12px 8px; min-height: 80px; }
+    .about-stats .s .n { font-size: 20px; }
+    .about-stats .s .l { font-size: 9.5px; }
+
+    .dept-card { padding: 22px 18px; }
+    .spec-body { padding: 32px 16px 18px; }
+    .doctor-card { padding: 16px; gap: 14px; }
+
+    .booking-form { padding: 22px 18px; }
+    .field input, .field select, .field textarea { font-size: 16px; padding: 13px 14px; } /* 16px prevents iOS zoom on tap */
+    
+    .emergency { padding: 32px 20px; }
+    .emergency-num .num { font-size: 32px; }
+
+    .final-cta { padding: 36px 20px; }
+    .foot-grid { flex-direction: column; gap: 28px; }
+  }
+
+  @media (max-width: 480px) {
+    .wrap { padding: 0 16px; }
+    .logo { font-size: 16.5px; }
+    .logo .mark { width: 30px; height: 30px; font-size: 11px; }
+
+    .vitals-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .vital { padding: 10px 12px; }
+    .vital .val { font-size: 18px; }
+
+    .about-stats { grid-template-columns: 1fr; }
+    
+    .doctor-card { grid-template-columns: 1fr; }
+    .doctor-photo { width: 100%; height: 160px; }
+
+    .partner-row { grid-template-columns: repeat(2, 1fr); }
+
+    .ai-toggle { width: 52px; height: 52px; bottom: 20px; right: 20px; }
+    .ai-toggle svg { width: 22px; height: 22px; }
+    .ai-panel { bottom: 82px; right: 14px; left: 14px; width: auto; max-width: none; height: 420px; }
+  }
 
   @media (prefers-reduced-motion: reduce){*{transition-duration:.001s !important; animation-duration:.001s !important;} html{scroll-behavior:auto;}}
   a:focus-visible, button:focus-visible, input:focus-visible{outline:2px solid var(--orange);outline-offset:3px;}
@@ -513,7 +634,25 @@ header.scrolled{background:rgba(7,17,31,0.82);backdrop-filter:blur(14px);border-
       <a href="#contact">Contact</a>
     </div>
     <a href="#booking" class="nav-cta">Book Appointment</a>
+    <button class="nav-toggle-btn" id="mobileNavToggle" aria-label="Toggle Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12" id="line1"/>
+        <line x1="3" y1="6" x2="21" y2="6" id="line2"/>
+        <line x1="3" y1="18" x2="21" y2="18" id="line3"/>
+      </svg>
+    </button>
   </nav>
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+    <div class="mobile-menu-links">
+      <a href="#about">About</a>
+      <a href="#departments">Departments</a>
+      <a href="#associated-doctors">Associated Doctors</a>
+      <a href="#diagnostics">Diagnostics</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#booking" class="mobile-menu-cta">Book Appointment</a>
+  </div>
 </header>
 
 <main>
@@ -1942,6 +2081,27 @@ if(blogGrid){
           submitButton.textContent = originalLabel;
         }
       }
+    });
+  }
+})();
+</script>
+
+<script>
+(function(){
+  const toggleBtn = document.getElementById('mobileNavToggle');
+  const overlay = document.getElementById('mobileMenuOverlay');
+  if(toggleBtn && overlay){
+    toggleBtn.addEventListener('click', function(){
+      const isOpen = overlay.classList.toggle('open');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+      toggleBtn.setAttribute('aria-expanded', isOpen);
+    });
+    overlay.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+        toggleBtn.setAttribute('aria-expanded', 'false');
+      });
     });
   }
 })();
