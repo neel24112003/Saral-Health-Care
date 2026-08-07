@@ -1,0 +1,7 @@
+{
+  "name": "saral-health-care/site",
+  "description": "Saral Health Care website with PHPMailer support",
+  "require": {
+    "phpmailer/phpmailer": "^6.9"
+  }
+}
