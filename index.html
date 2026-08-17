@@ -1367,9 +1367,9 @@ var associatedDoctors = [
   {name:'Dr. Rajesh Iyer', degree:'MD, DM Neurology', speciality:'Neurology', exp:'12+ yrs exp', opd:'Tue · Thu · Sat', image:'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=400&q=80', initials:'RI'},
   {name:'Dr. Sandeep Shah', degree:'MS Orthopaedics', speciality:'Orthopaedic Surgeon', exp:'18+ yrs exp', opd:'Mon - Sat', image:'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=80', initials:'SS'},
   {name:'Dr. Paresh Desai', degree:'MD Pediatrics', speciality:'Pediatrics', exp:'10+ yrs exp', opd:'Mon · Tue · Thu · Sat', image:'https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=400&q=80', initials:'PD'},
-  {name:'Dr. Nilesh Patel', degree:'MD Radiodiagnosis', speciality:'Radiology & Imaging', exp:'14+ yrs exp', opd:'Daily by appointment', image:'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80', initials:'NP'},
+  {name:'Dr. Nilesh Patel', degree:'MD Radiodiagnosis', speciality:'Radiology & Imaging', exp:'14+ yrs exp', opd:'Daily by appointment', image:'https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?auto=format&fit=crop&w=400&q=80', initials:'NP'},
   {name:'Dr. Kunal Joshi', degree:'MS General Surgery', speciality:'General Surgery', exp:'16+ yrs exp', opd:'Mon · Wed · Sat', image:'https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=400&q=80', initials:'KJ'},
-  {name:'Dr. Hiral Trivedi', degree:'MS Obstetrics & Gynaecology', speciality:'Gynaecology', exp:'11+ yrs exp', opd:'Tue · Thu · Sat', image:'https://images.unsplash.com/photo-1594824813566-78a993774880?auto=format&fit=crop&w=400&q=80', initials:'HT'},
+  {name:'Dr. Hiral Trivedi', degree:'MS Obstetrics & Gynaecology', speciality:'Gynaecology', exp:'11+ yrs exp', opd:'Tue · Thu · Sat', image:'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80', initials:'HT'},
   {name:'Dr. Mayank Vora', degree:'MD Dermatology', speciality:'Dermatology', exp:'9+ yrs exp', opd:'Mon · Fri', image:'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=400&q=80', initials:'MV'},
   {name:'Dr. Bhavin Shah', degree:'MS ENT', speciality:'ENT Specialist', exp:'13+ yrs exp', opd:'Wed · Sat', image:'https://images.unsplash.com/photo-1638202993928-7267aad84c31?auto=format&fit=crop&w=400&q=80', initials:'BS'}
 ];
@@ -1379,7 +1379,7 @@ if(associatedDoctorsGrid){
     var el=document.createElement('div');
     el.className='doctor-card reveal d'+((idx % 3)+1);
     var photoMarkup = doc.image 
-      ? '<img src="'+doc.image+'" alt="Portrait of '+doc.name+'" loading="lazy">' 
+      ? '<img src="'+doc.image+'" alt="Portrait of '+doc.name+'" loading="lazy" onerror="this.onerror=null;this.src=\'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80\';">' 
       : '<div class="photo-fallback"><div class="initials">'+(doc.initials||'DR')+'</div><div class="note">Doctor</div></div>';
     el.innerHTML='<div class="doctor-photo">'+photoMarkup+'<span class="doc-status-badge">Available</span></div>'+
       '<div class="doctor-info"><h3>'+doc.name+' <span class="verified-icon" title="Verified Specialist">✓</span></h3>'+
