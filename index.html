@@ -286,13 +286,25 @@ header.scrolled{background:rgba(7,17,31,0.86);backdrop-filter:blur(16px);border-
   .btn-ghost-light{border:1.5px solid rgba(37,99,235,0.4) !important;box-shadow:0 0 14px rgba(37,99,235,0.18) !important;color:var(--ink);padding:13.5px 24px;border-radius:999px;font-weight:600;font-size:14.5px;transition:border-color .2s ease, background .2s ease, transform .2s ease, box-shadow .2s ease;}
   .btn-ghost-light:hover{border-color:var(--blue);background:var(--blue-soft);transform:translateY(-1px);box-shadow:0 0 24px rgba(37,99,235,0.4) !important;}
 
-  .dept-card, .doctor-card, .pkg-card, .diag-card, .infra-card, .testi-card, .vitals-card, .loc-info, .map-frame-wrap {
-    border: 1px solid rgba(37, 99, 235, 0.25) !important;
-    box-shadow: 0 18px 42px -20px rgba(17, 37, 63, 0.22), 0 0 18px rgba(37, 99, 235, 0.12) !important;
+  /* ---------- Permanent Visible Card Borders System (Default State) ---------- */
+  .dept-card, .doctor-card, .pkg-card, .testi-card, .spec-card, .showcase-mini-card {
+    border: 1.5px solid rgba(37, 99, 235, 0.45) !important;
+    box-shadow: 0 10px 30px -15px rgba(37, 99, 235, 0.2), 0 2px 8px rgba(17, 37, 63, 0.08) !important;
   }
-  .dept-card:hover, .doctor-card:hover, .pkg-card:hover, .diag-card:hover, .infra-card:hover, .testi-card:hover {
-    border-color: rgba(249, 115, 22, 0.55) !important;
-    box-shadow: 0 26px 58px -22px rgba(37, 99, 235, 0.38), 0 0 24px rgba(249, 115, 22, 0.32) !important;
+
+  .glass-dark, .diag-card, .infra-card, .vitals-card, .loc-info, .map-frame-wrap, .showcase-panel.dark, .booking-form, .emergency, .about-visual {
+    border: 1.5px solid rgba(0, 242, 254, 0.45) !important;
+    box-shadow: 0 12px 36px -15px rgba(0, 242, 254, 0.2), 0 0 16px rgba(37, 99, 235, 0.15) !important;
+  }
+
+  .dept-card:hover, .doctor-card:hover, .pkg-card:hover, .testi-card:hover, .spec-card:hover, .showcase-mini-card:hover {
+    border-color: rgba(249, 115, 22, 0.75) !important;
+    box-shadow: 0 24px 54px -20px rgba(37, 99, 235, 0.38), 0 0 24px rgba(249, 115, 22, 0.32) !important;
+  }
+
+  .diag-card:hover, .infra-card:hover, .vitals-card:hover, .loc-info:hover, .showcase-panel.dark:hover {
+    border-color: rgba(249, 115, 22, 0.8) !important;
+    box-shadow: 0 26px 58px -20px rgba(0, 242, 254, 0.45), 0 0 26px rgba(249, 115, 22, 0.35) !important;
   }
 
   .hero-badges{margin-top:44px;display:flex;gap:34px;flex-wrap:wrap;}
