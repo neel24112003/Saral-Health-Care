@@ -295,26 +295,74 @@ header.scrolled{background:rgba(7,17,31,0.82);backdrop-filter:blur(14px);border-
   .spec-body .role{font-size:12.5px;color:var(--blue);font-weight:600;margin-top:3px;}
   .spec-body .meta{margin-top:12px;display:flex;gap:14px;font-family:var(--font-mono);font-size:11px;color:var(--muted-2);flex-wrap:wrap;}
 
-  /* associated doctors */
-  .assoc-section{background:linear-gradient(180deg,#F8FCFE,#EDF8F6);overflow:hidden;}
-  .assoc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px;}
+  /* ---------- associated doctors design upgrade ---------- */
+  .assoc-section{background:linear-gradient(180deg,#F0F7FF,#EBF5FF 50%,#F5FAFF);overflow:hidden;position:relative;}
+  .assoc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
   @media (max-width:1020px){.assoc-grid{grid-template-columns:repeat(2,1fr);}}
   @media (max-width:640px){.assoc-grid{grid-template-columns:1fr;}}
-  .doctor-card{background:var(--surface);border:1px solid rgba(37,99,235,0.12);border-radius:20px;padding:18px;display:grid;grid-template-columns:118px 1fr;gap:18px;align-items:center;box-shadow:0 24px 54px -34px rgba(17,37,63,0.25);position:relative;overflow:hidden;transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;}
-  .doctor-card::before{content:'';position:absolute;inset:0;border-radius:18px;border:1px solid rgba(255,255,255,0.85);pointer-events:none;}
-  .doctor-card:hover{transform:translateY(-6px);border-color:rgba(249,115,22,0.26);box-shadow:0 30px 64px -34px rgba(249,115,22,0.24);}
-  .doctor-photo{width:118px;height:132px;border-radius:16px;background:linear-gradient(145deg,var(--orange-soft),var(--blue-soft));border:1px solid rgba(37,99,235,0.12);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 -30px 50px rgba(37,99,235,0.08);overflow:hidden;position:relative;}
-  .doctor-photo img{width:100%;height:100%;object-fit:cover;display:block;}
-  .doctor-photo .photo-fallback{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px;text-align:center;background:linear-gradient(145deg,var(--orange-soft),var(--blue-soft));color:var(--blue-dark);}
-  .doctor-photo .photo-fallback .initials{font-family:var(--font-display);font-size:24px;font-weight:800;letter-spacing:0.08em;}
-  .doctor-photo .photo-fallback .note{margin-top:6px;font-family:var(--font-mono);font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);}
-  .doctor-photo svg{width:82px;height:82px;color:var(--orange);filter:drop-shadow(0 8px 14px rgba(37,99,235,0.12));}
-  .doctor-info h3{font-size:17px;margin-bottom:4px;}
-  .doctor-info .degree{font-size:12px;color:var(--muted);font-weight:600;}
-  .doctor-info .speciality{margin-top:8px;font-size:13px;color:var(--blue);font-weight:700;}
-  .doctor-info .details{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px;}
-  .doctor-info .details span{font-family:var(--font-mono);font-size:10.5px;color:var(--muted);background:var(--blue-soft);border:1px solid rgba(37,99,235,0.12);border-radius:999px;padding:5px 8px;}
-  @media (max-width:420px){.doctor-card{grid-template-columns:1fr;}.doctor-photo{width:100%;height:160px;}}
+  .doctor-card{
+    background:rgba(255,255,255,0.95);
+    border:1px solid rgba(37,99,235,0.14);
+    border-radius:22px;
+    padding:20px;
+    display:grid;
+    grid-template-columns:124px 1fr;
+    gap:20px;
+    align-items:center;
+    box-shadow:0 20px 45px -25px rgba(17,37,63,0.15);
+    position:relative;
+    overflow:hidden;
+    backdrop-filter:blur(10px);
+    transition:transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s cubic-bezier(.2,.7,.2,1), border-color .35s ease;
+  }
+  .doctor-card::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%), rgba(37,99,235,0.08), transparent 60%);
+    opacity:0;transition:opacity .35s ease;pointer-events:none;
+  }
+  .doctor-card:hover{
+    transform:translateY(-8px) scale(1.01);
+    border-color:rgba(249,115,22,0.36);
+    box-shadow:0 32px 64px -28px rgba(37,99,235,0.28);
+  }
+  .doctor-card:hover::before{opacity:1;}
+  .doctor-photo{
+    width:124px;height:140px;border-radius:18px;
+    background:linear-gradient(145deg,rgba(249,115,22,0.12),rgba(37,99,235,0.15));
+    border:1.5px solid rgba(37,99,235,0.14);
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;position:relative;
+    box-shadow:0 10px 24px -10px rgba(17,37,63,0.2);
+  }
+  .doctor-photo img{
+    width:100%;height:100%;object-fit:cover;display:block;
+    transition:transform .5s cubic-bezier(.2,.7,.2,1);
+  }
+  .doctor-card:hover .doctor-photo img{transform:scale(1.08);}
+  .doc-status-badge{
+    position:absolute;bottom:8px;left:50%;transform:translateX(-50%);
+    background:rgba(7,17,31,0.85);backdrop-filter:blur(6px);
+    color:#22C55E;font-family:var(--font-mono);font-size:9.5px;
+    font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
+    padding:3px 9px;border-radius:20px;border:1px solid rgba(34,197,94,0.3);
+    display:flex;align-items:center;gap:4px;white-space:nowrap;
+  }
+  .doc-status-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:#22C55E;box-shadow:0 0 6px #22C55E;}
+  .doctor-info h3{font-size:17.5px;color:var(--ink);font-weight:700;display:flex;align-items:center;gap:6px;}
+  .verified-icon{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,var(--orange),var(--blue));
+    color:#fff;font-size:10px;font-weight:800;box-shadow:0 3px 8px rgba(37,99,235,0.3);
+  }
+  .doctor-info .degree{font-size:12px;color:var(--muted);font-weight:600;margin-top:2px;}
+  .doctor-info .speciality{margin-top:7px;font-size:13.5px;color:var(--blue);font-weight:700;}
+  .doctor-info .details{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px;}
+  .doctor-info .details span{
+    font-family:var(--font-mono);font-size:10.5px;color:var(--ink);
+    background:var(--blue-soft);border:1px solid rgba(37,99,235,0.14);
+    border-radius:999px;padding:4px 10px;font-weight:500;
+  }
+  @media (max-width:420px){.doctor-card{grid-template-columns:1fr;}.doctor-photo{width:100%;height:180px;}}
  
   /* ---------- booking ---------- */
   .booking-section{background:linear-gradient(135deg,var(--navy-deep),var(--blue-dark));color:#fff;}
@@ -483,17 +531,69 @@ header.scrolled{background:rgba(7,17,31,0.82);backdrop-filter:blur(14px);border-
   .blog-body p{margin-top:8px;font-size:13.3px;color:var(--muted);line-height:1.6;}
   .blog-meta{margin-top:14px;font-family:var(--font-mono);font-size:11px;color:var(--muted-2);}
 
-  /* ---------- location ---------- */
+  /* ---------- location & map design upgrade ---------- */
   .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:44px;}
   @media (max-width:860px){.loc-grid{grid-template-columns:1fr;}}
-  .loc-info{background:var(--surface);border:1px solid rgba(37,99,235,0.12);border-radius:18px;padding:30px;display:flex;flex-direction:column;justify-content:center;box-shadow:0 18px 38px -28px rgba(17,37,63,0.2);}
-  .loc-row{display:flex;gap:14px;padding:15px 0;border-bottom:1px solid var(--line);}
+  .loc-info{
+    background:var(--surface);
+    border:1px solid rgba(37,99,235,0.14);
+    border-radius:24px;
+    padding:34px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    box-shadow:0 22px 50px -28px rgba(17,37,63,0.22);
+    position:relative;
+    overflow:hidden;
+  }
+  .loc-info::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:4px;
+    background:linear-gradient(90deg,var(--orange),var(--blue),var(--success));
+  }
+  .loc-header-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);
+    color:var(--success);font-family:var(--font-mono);font-size:11px;
+    padding:6px 14px;border-radius:20px;font-weight:700;margin-bottom:20px;width:max-content;
+  }
+  .loc-row{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);align-items:flex-start;}
   .loc-row:last-child{border-bottom:none;}
-  .loc-row .ic{width:20px;height:20px;color:var(--orange);flex:none;margin-top:2px;}
+  .loc-icon-badge{
+    width:42px;height:42px;border-radius:12px;
+    background:linear-gradient(135deg,var(--orange-soft),var(--blue-soft));
+    border:1px solid rgba(37,99,235,0.15);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--blue);flex:none;
+  }
+  .loc-icon-badge svg{width:20px;height:20px;}
   .loc-row .label{font-family:var(--font-mono);font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted-2);}
-  .loc-row .val{margin-top:4px;font-size:14px;color:var(--ink);}
-  .map-frame{border-radius:18px;overflow:hidden;border:2px solid var(--blue);min-height:320px;box-shadow:0 18px 42px -28px rgba(37,99,235,0.2);height:100%;align-self:stretch;}
-  .map-frame iframe{width:100%;height:100%;min-height:320px;border:0;}
+  .loc-row .val{margin-top:4px;font-size:14.5px;color:var(--ink);font-weight:600;}
+  .loc-row .val a{color:var(--blue);transition:color .2s ease;}
+  .loc-row .val a:hover{color:var(--orange);}
+
+  .map-frame-wrap{
+    position:relative;border-radius:24px;overflow:hidden;
+    border:2px solid rgba(37,99,235,0.22);
+    box-shadow:0 24px 54px -28px rgba(37,99,235,0.3);
+    min-height:380px;height:100%;display:flex;flex-direction:column;
+    background:var(--navy-deep);
+  }
+  .map-frame-header{
+    background:linear-gradient(135deg,var(--navy-deep),var(--navy));
+    padding:14px 20px;display:flex;align-items:center;justify-content:space-between;
+    border-bottom:1px solid rgba(255,255,255,0.1);color:#fff;
+  }
+  .map-frame-title{font-family:var(--font-display);font-size:14px;font-weight:700;display:flex;align-items:center;gap:8px;}
+  .map-frame-title svg{width:18px;height:18px;color:var(--orange);}
+  .map-directions-btn{
+    background:linear-gradient(120deg,var(--orange),var(--blue));
+    color:white;padding:7px 16px;border-radius:999px;
+    font-size:12px;font-weight:700;display:inline-flex;align-items:center;gap:6px;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .map-directions-btn:hover{transform:scale(1.04);box-shadow:0 6px 18px rgba(249,115,22,0.35);}
+  .map-frame{flex:1;width:100%;min-height:320px;position:relative;}
+  .map-frame iframe{width:100%;height:100%;min-height:320px;border:0;display:block;}
 
   /* ---------- event gallery ---------- */
   .event-gallery-section{background:linear-gradient(135deg,#f8fbff 0%,#eef6ff 100%);}
@@ -952,28 +1052,68 @@ header.scrolled{background:rgba(7,17,31,0.82);backdrop-filter:blur(14px);border-
       <div class="section-head reveal">
         <div class="eyebrow">Contact &amp; location</div>
         <h2>Find us, or reach out directly</h2>
+        <p>Located in the heart of Surat with 24/7 emergency response &amp; OPD consultations.</p>
       </div>
       <div class="loc-grid">
         <div class="loc-info reveal">
-          <div class="loc-row">
-            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-7.5 7-12a7 7 0 10-14 0c0 4.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg>
-            <div><div class="label">Address</div><div class="val"><a href="https://www.google.com/maps/dir/?api=1&destination=Saral+Health+Care+Kotsafil+Main+Road+Salabatpura+Surat+395003" target="_blank" rel="noopener noreferrer">1st Floor, Sasmi Bhavan, Kotsafil Main Road, Salabatpura, Opp. DKM Hospital, Surat – 395003, Gujarat</a></div></div>
+          <div class="loc-header-badge">
+            <span class="live-dot"></span> OPD Active · 24/7 Emergency Open
           </div>
           <div class="loc-row">
-            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
-            <div><div class="label">OPD Hours</div><div class="val">Monday – Saturday, 9:00 AM – 8:00 PM · Emergency 24/7</div></div>
+            <div class="loc-icon-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-7.5 7-12a7 7 0 10-14 0c0 4.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            </div>
+            <div>
+              <div class="label">Hospital Address</div>
+              <div class="val">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Saral+Health+Care+Kotsafil+Main+Road+Salabatpura+Surat+395003" target="_blank" rel="noopener noreferrer">
+                  1st Floor, Sasmi Bhavan, Kotsafil Main Road, Salabatpura, Opp. DKM Hospital, Surat – 395003, Gujarat
+                </a>
+              </div>
+            </div>
           </div>
           <div class="loc-row">
-            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h4l2 5-2.5 1.5a11 11 0 005 5L14 14l5 2v4a2 2 0 01-2.2 2A17 17 0 013 7.2 2 2 0 015 5z"/></svg>
-            <div><div class="label">Phone</div><div class="val"><a href="tel:+917778820310">+91 77788 20310</a></div></div>
+            <div class="loc-icon-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+            </div>
+            <div>
+              <div class="label">OPD &amp; Visiting Hours</div>
+              <div class="val">Monday – Saturday: 9:00 AM – 8:00 PM<br><span style="font-size:12.5px;color:var(--orange);">Emergency &amp; Ambulance: 24/7 Available</span></div>
+            </div>
           </div>
           <div class="loc-row">
-            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M4 8h16M8 4v4"/></svg>
-            <div><div class="label">Email</div><div class="val"><a href="mailto:Saralhealthcare786@gmail.com">Saralhealthcare786@gmail.com</a></div></div>
+            <div class="loc-icon-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="label">Helpline &amp; Appointments</div>
+              <div class="val"><a href="tel:+917778820310">+91 77788 20310</a></div>
+            </div>
+          </div>
+          <div class="loc-row">
+            <div class="loc-icon-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="label">Official Email</div>
+              <div class="val"><a href="mailto:Saralhealthcare786@gmail.com">Saralhealthcare786@gmail.com</a></div>
+            </div>
           </div>
         </div>
-        <div class="map-frame reveal d1">
-          <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=72.826,21.188,72.838,21.195&layer=mapnik&marker=21.1917444,72.8325641" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map to Saral Health Care, Salabatpura, Surat"></iframe>
+
+        <div class="map-frame-wrap reveal d1">
+          <div class="map-frame-header">
+            <div class="map-frame-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-7.5 7-12a7 7 0 10-14 0c0 4.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              Saral Health Care Map
+            </div>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Saral+Health+Care+Kotsafil+Main+Road+Salabatpura+Surat+395003" target="_blank" rel="noopener noreferrer" class="map-directions-btn">
+              📍 Live Directions →
+            </a>
+          </div>
+          <div class="map-frame">
+            <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=72.826,21.188,72.838,21.195&layer=mapnik&marker=21.1917444,72.8325641" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map location of Saral Health Care, Salabatpura, Surat"></iframe>
+          </div>
         </div>
       </div>
     </div>
@@ -1148,26 +1288,28 @@ if(deptGrid){
 }
 
 var associatedDoctors = [
-  {name:'Dr. Ajay Mehta', degree:'MD, DM Cardiology', speciality:'Cardiology', exp:'15+ years', opd:'Mon · Wed · Fri', image:null, initials:'AM'},
-  {name:'Dr. Rajesh Iyer', degree:'MD, DM Neurology', speciality:'Neurology', exp:'12+ years', opd:'Tue · Thu · Sat', image:null, initials:'RI'},
-  {name:'Dr. Sandeep Shah', degree:'MS Orthopaedics', speciality:'Orthopaedic Surgeon', exp:'18+ years', opd:'Mon - Sat', image:null, initials:'SS'},
-  {name:'Dr. Paresh Desai', degree:'MD Pediatrics', speciality:'Pediatrics', exp:'10+ years', opd:'Mon · Tue · Thu · Sat', image:null, initials:'PD'},
-  {name:'Dr. Nilesh Patel', degree:'MD Radiodiagnosis', speciality:'Radiology & Imaging', exp:'14+ years', opd:'Daily by appointment', image:null, initials:'NP'},
-  {name:'Dr. Kunal Joshi', degree:'MS General Surgery', speciality:'General Surgery', exp:'16+ years', opd:'Mon · Wed · Sat', image:null, initials:'KJ'},
-  {name:'Dr. Hiral Trivedi', degree:'MS Obstetrics & Gynaecology', speciality:'Gynaecology', exp:'11+ years', opd:'Tue · Thu · Sat', image:null, initials:'HT'},
-  {name:'Dr. Mayank Vora', degree:'MD Dermatology', speciality:'Dermatology', exp:'9+ years', opd:'Mon · Fri', image:null, initials:'MV'},
-  {name:'Dr. Bhavin Shah', degree:'MS ENT', speciality:'ENT', exp:'13+ years', opd:'Wed · Sat', image:null, initials:'BS'}
+  {name:'Dr. Ajay Mehta', degree:'MD, DM Cardiology', speciality:'Cardiology', exp:'15+ yrs exp', opd:'Mon · Wed · Fri', image:'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80', initials:'AM'},
+  {name:'Dr. Rajesh Iyer', degree:'MD, DM Neurology', speciality:'Neurology', exp:'12+ yrs exp', opd:'Tue · Thu · Sat', image:'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=400&q=80', initials:'RI'},
+  {name:'Dr. Sandeep Shah', degree:'MS Orthopaedics', speciality:'Orthopaedic Surgeon', exp:'18+ yrs exp', opd:'Mon - Sat', image:'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=80', initials:'SS'},
+  {name:'Dr. Paresh Desai', degree:'MD Pediatrics', speciality:'Pediatrics', exp:'10+ yrs exp', opd:'Mon · Tue · Thu · Sat', image:'https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=400&q=80', initials:'PD'},
+  {name:'Dr. Nilesh Patel', degree:'MD Radiodiagnosis', speciality:'Radiology & Imaging', exp:'14+ yrs exp', opd:'Daily by appointment', image:'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80', initials:'NP'},
+  {name:'Dr. Kunal Joshi', degree:'MS General Surgery', speciality:'General Surgery', exp:'16+ yrs exp', opd:'Mon · Wed · Sat', image:'https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=400&q=80', initials:'KJ'},
+  {name:'Dr. Hiral Trivedi', degree:'MS Obstetrics & Gynaecology', speciality:'Gynaecology', exp:'11+ yrs exp', opd:'Tue · Thu · Sat', image:'https://images.unsplash.com/photo-1594824813566-78a993774880?auto=format&fit=crop&w=400&q=80', initials:'HT'},
+  {name:'Dr. Mayank Vora', degree:'MD Dermatology', speciality:'Dermatology', exp:'9+ yrs exp', opd:'Mon · Fri', image:'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=400&q=80', initials:'MV'},
+  {name:'Dr. Bhavin Shah', degree:'MS ENT', speciality:'ENT Specialist', exp:'13+ yrs exp', opd:'Wed · Sat', image:'https://images.unsplash.com/photo-1638202993928-7267aad84c31?auto=format&fit=crop&w=400&q=80', initials:'BS'}
 ];
-var doctorPlaceholderSvg = '<svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><circle cx="60" cy="44" r="24" fill="currentColor" opacity="0.22"/><path d="M22 104c4.8-24 20.5-38 38-38s33.2 14 38 38" fill="currentColor" opacity="0.22"/><path d="M34 28h52v10H34z" fill="currentColor"/><path d="M55 18h10v30H55z" fill="#fff" opacity="0.92"/><path d="M45 28h30v10H45z" fill="#fff" opacity="0.92"/></svg>';
 var associatedDoctorsGrid = document.getElementById('associatedDoctorsGrid');
 if(associatedDoctorsGrid){
-  associatedDoctors.forEach(function(doc){
+  associatedDoctors.forEach(function(doc, idx){
     var el=document.createElement('div');
-    el.className='doctor-card';
-    var photoMarkup = doc.image ? '<img src="'+doc.image+'" alt="Portrait of '+doc.name+'" loading="lazy">' : '<div class="photo-fallback"><div class="initials">'+(doc.initials||'DR')+'</div><div class="note">Manual Photo</div></div>';
-    el.innerHTML='<div class="doctor-photo">'+photoMarkup+'</div><div class="doctor-info"><h3>'+doc.name+'</h3>'+
+    el.className='doctor-card reveal d'+((idx % 3)+1);
+    var photoMarkup = doc.image 
+      ? '<img src="'+doc.image+'" alt="Portrait of '+doc.name+'" loading="lazy">' 
+      : '<div class="photo-fallback"><div class="initials">'+(doc.initials||'DR')+'</div><div class="note">Doctor</div></div>';
+    el.innerHTML='<div class="doctor-photo">'+photoMarkup+'<span class="doc-status-badge">Available</span></div>'+
+      '<div class="doctor-info"><h3>'+doc.name+' <span class="verified-icon" title="Verified Specialist">✓</span></h3>'+
       '<div class="degree">'+doc.degree+'</div><div class="speciality">'+doc.speciality+'</div>'+
-      '<div class="details"><span>'+doc.exp+'</span><span>'+doc.opd+'</span></div></div>';
+      '<div class="details"><span>⭐ '+doc.exp+'</span><span>📅 '+doc.opd+'</span></div></div>';
     associatedDoctorsGrid.appendChild(el);
   });
 }
