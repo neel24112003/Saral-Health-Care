@@ -245,23 +245,25 @@ header.scrolled{background:rgba(7,17,31,0.86);backdrop-filter:blur(16px);border-
   .hero p.lede{margin-top:20px;font-size:17px;color:rgba(255,255,255,0.68);max-width:520px;line-height:1.7;}
   .hero-actions{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap;}
   /* ---------- Theme-Colored Glowing Neon Borders System ---------- */
-  .doc-status-badge, .loc-header-badge, .doctor-info .details span, .fbadge, .tag, .infra-tag, .spec-badge, .ai-chip {
+  .doc-status-badge, .loc-header-badge, .doctor-info .details span, .fbadge, .spec-badge, .ai-chip {
     border: 1px solid rgba(249, 115, 22, 0.45) !important;
     box-shadow: 0 0 12px rgba(249, 115, 22, 0.2), inset 0 0 8px rgba(249, 115, 22, 0.08) !important;
     transition: all .25s ease;
   }
-  .eyebrow {
+  .eyebrow, .tag, .infra-tag, .pkg-kicker, .dept-card .tag {
     border: none !important;
     box-shadow: none !important;
     background: transparent !important;
-    color: var(--orange) !important;
     padding: 0 !important;
+  }
+  .eyebrow {
+    color: var(--orange) !important;
   }
   .section-head h2, .section-head h3, .section-head p {
     border: none !important;
     box-shadow: none !important;
   }
-  .ai-chip:hover, .doctor-info .details span:hover, .tag:hover {
+  .ai-chip:hover, .doctor-info .details span:hover {
     border-color: rgba(0, 242, 254, 0.8) !important;
     box-shadow: 0 0 18px rgba(0, 242, 254, 0.4), inset 0 0 10px rgba(0, 242, 254, 0.15) !important;
     transform: translateY(-2px);
