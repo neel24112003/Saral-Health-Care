@@ -420,9 +420,20 @@ header.scrolled{background:rgba(7,17,31,0.86);backdrop-filter:blur(16px);border-
   .field input, .field select, .field textarea{
     width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.16);border-radius:12px;padding:12px 14px;color:#fff;font-family:var(--font-body);font-size:13.5px;outline:none;transition:border-color .2s ease, background .2s ease, transform .2s ease;
   }
+  .field select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.6)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 16px;
+    padding-right: 38px;
+    cursor: pointer;
+  }
   .field input::placeholder, .field textarea::placeholder{color:rgba(255,255,255,0.36);}
-  .field input:focus, .field select:focus, .field textarea:focus{border-color:var(--orange);background:rgba(255,255,255,0.12);transform:translateY(-1px);}
-  .field select option{background:var(--navy-deep);color:#fff;}
+  .field input:focus, .field select:focus, .field textarea:focus{border-color:var(--orange);background-color:rgba(255,255,255,0.12);transform:translateY(-1px);}
+  .field select option{background:var(--navy-deep);color:#fff;padding:10px;}
   .booking-form .btn-primary{width:100%;justify-content:center;margin-top:6px;}
   .form-note{margin-top:14px;font-family:var(--font-mono);font-size:11px;color:rgba(255,255,255,0.4);min-height:16px;display:none;}
   .form-note.show{display:block;}
@@ -721,6 +732,7 @@ header.scrolled{background:rgba(7,17,31,0.86);backdrop-filter:blur(16px);border-
 
     .booking-form { padding: 22px 18px; }
     .field input, .field select, .field textarea { font-size: 16px; padding: 13px 14px; } /* 16px prevents iOS zoom on tap */
+    .field select { padding-right: 38px; }
     
     .emergency { padding: 32px 20px; }
     .emergency-num .num { font-size: 32px; }
