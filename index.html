@@ -245,10 +245,21 @@ header.scrolled{background:rgba(7,17,31,0.86);backdrop-filter:blur(16px);border-
   .hero p.lede{margin-top:20px;font-size:17px;color:rgba(255,255,255,0.68);max-width:520px;line-height:1.7;}
   .hero-actions{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap;}
   /* ---------- Theme-Colored Glowing Neon Borders System ---------- */
-  .eyebrow, .doc-status-badge, .loc-header-badge, .doctor-info .details span, .fbadge, .tag, .infra-tag, .spec-badge, .ai-chip {
+  .doc-status-badge, .loc-header-badge, .doctor-info .details span, .fbadge, .tag, .infra-tag, .spec-badge, .ai-chip {
     border: 1px solid rgba(249, 115, 22, 0.45) !important;
     box-shadow: 0 0 12px rgba(249, 115, 22, 0.2), inset 0 0 8px rgba(249, 115, 22, 0.08) !important;
     transition: all .25s ease;
+  }
+  .eyebrow {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    color: var(--orange) !important;
+    padding: 0 !important;
+  }
+  .section-head h2, .section-head h3, .section-head p {
+    border: none !important;
+    box-shadow: none !important;
   }
   .ai-chip:hover, .doctor-info .details span:hover, .tag:hover {
     border-color: rgba(0, 242, 254, 0.8) !important;
@@ -2110,7 +2121,7 @@ if(blogGrid){
       caption: 'High-end imaging and diagnostics presented with modern, calm design.'
     },
     {
-      src: 'https://images.unsplash.com/photo-1584515933487-779824d081a6?auto=format&fit=crop&w=1400&q=80',
+      src: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=80',
       alt: 'Healthcare event with speakers and visitors',
       title: 'Patient education evening',
       caption: 'An inviting evening of consultations, awareness and compassionate interaction.'
@@ -2158,7 +2169,7 @@ if(blogGrid){
       var slide = document.createElement('article');
       slide.className = 'gallery-slide';
       slide.innerHTML = [
-        '<img src="' + item.src + '" alt="' + item.alt + '" loading="lazy" decoding="async">',
+        '<img src="' + item.src + '" alt="' + item.alt + '" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=\'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=80\';">',
         '<div class="gallery-overlay"></div>',
         '<div class="gallery-copy">',
         '<div class="meta">',
