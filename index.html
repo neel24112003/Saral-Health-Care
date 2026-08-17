@@ -244,15 +244,46 @@ header.scrolled{background:rgba(7,17,31,0.86);backdrop-filter:blur(16px);border-
   .hero h1{font-size:clamp(38px,5.6vw,68px);line-height:1.06;margin-top:20px;color:#fff;}
   .hero p.lede{margin-top:20px;font-size:17px;color:rgba(255,255,255,0.68);max-width:520px;line-height:1.7;}
   .hero-actions{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap;}
-.btn-primary{background:linear-gradient(120deg,var(--orange),var(--blue));color:white;padding:15px 28px;border-radius:999px;font-weight:700;font-size:14.5px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:transform .25s ease, box-shadow .25s ease;box-shadow:0 12px 24px rgba(37,99,235,0.18);}
-  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(249,115,22,0.24);} 
-  .btn-ghost-dark{border:1.5px solid rgba(255,255,255,0.24);color:#fff;padding:13.5px 24px;border-radius:999px;font-weight:600;font-size:14.5px;transition:border-color .2s ease, background .2s ease, transform .2s ease;}
-  .btn-ghost-dark:hover{border-color:var(--orange);background:rgba(249,115,22,0.10);transform:translateY(-1px);} 
-  .btn-ghost-light{border:1.5px solid var(--line);color:var(--ink);padding:13.5px 24px;border-radius:999px;font-weight:600;font-size:14.5px;transition:border-color .2s ease, background .2s ease, transform .2s ease;}
-  .btn-ghost-light:hover{border-color:var(--blue);background:var(--blue-soft);transform:translateY(-1px);}
+  /* ---------- Theme-Colored Glowing Neon Borders System ---------- */
+  .eyebrow, .doc-status-badge, .loc-header-badge, .doctor-info .details span, .fbadge, .tag, .infra-tag, .spec-badge, .ai-chip {
+    border: 1px solid rgba(249, 115, 22, 0.45) !important;
+    box-shadow: 0 0 12px rgba(249, 115, 22, 0.2), inset 0 0 8px rgba(249, 115, 22, 0.08) !important;
+    transition: all .25s ease;
+  }
+  .ai-chip:hover, .doctor-info .details span:hover, .tag:hover {
+    border-color: rgba(0, 242, 254, 0.8) !important;
+    box-shadow: 0 0 18px rgba(0, 242, 254, 0.4), inset 0 0 10px rgba(0, 242, 254, 0.15) !important;
+    transform: translateY(-2px);
+  }
+
+  .about-stats .s, .insurance-stats .s, .vital, .hero-badges .item, .emergency-num, .partner-chip, .showcase-mini-card {
+    border: 1px solid rgba(37, 99, 235, 0.38) !important;
+    box-shadow: 0 0 18px rgba(37, 99, 235, 0.18), inset 0 0 12px rgba(249, 115, 22, 0.06) !important;
+    transition: all .3s ease;
+  }
+  .about-stats .s:hover, .insurance-stats .s:hover, .vital:hover, .emergency-num:hover, .partner-chip:hover {
+    border-color: rgba(249, 115, 22, 0.65) !important;
+    box-shadow: 0 0 24px rgba(249, 115, 22, 0.35), inset 0 0 16px rgba(0, 242, 254, 0.12) !important;
+  }
+
+  .btn-primary{background:linear-gradient(120deg,var(--orange),var(--blue));color:white;padding:15px 28px;border-radius:999px;font-weight:700;font-size:14.5px;border:1px solid rgba(255,255,255,0.4) !important;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:transform .25s ease, box-shadow .25s ease;box-shadow:0 0 22px rgba(249,115,22,0.35), 0 0 14px rgba(37,99,235,0.3) !important;}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 0 32px rgba(249,115,22,0.6), 0 0 20px rgba(0,242,254,0.45) !important;} 
+  .btn-ghost-dark{border:1.5px solid rgba(249,115,22,0.5) !important;box-shadow:0 0 16px rgba(249,115,22,0.22) !important;color:#fff;padding:13.5px 24px;border-radius:999px;font-weight:600;font-size:14.5px;transition:border-color .2s ease, background .2s ease, transform .2s ease, box-shadow .2s ease;}
+  .btn-ghost-dark:hover{border-color:var(--orange);background:rgba(249,115,22,0.10);transform:translateY(-1px);box-shadow:0 0 26px rgba(249,115,22,0.45) !important;} 
+  .btn-ghost-light{border:1.5px solid rgba(37,99,235,0.4) !important;box-shadow:0 0 14px rgba(37,99,235,0.18) !important;color:var(--ink);padding:13.5px 24px;border-radius:999px;font-weight:600;font-size:14.5px;transition:border-color .2s ease, background .2s ease, transform .2s ease, box-shadow .2s ease;}
+  .btn-ghost-light:hover{border-color:var(--blue);background:var(--blue-soft);transform:translateY(-1px);box-shadow:0 0 24px rgba(37,99,235,0.4) !important;}
+
+  .dept-card, .doctor-card, .pkg-card, .diag-card, .infra-card, .testi-card, .vitals-card, .loc-info, .map-frame-wrap {
+    border: 1px solid rgba(37, 99, 235, 0.25) !important;
+    box-shadow: 0 18px 42px -20px rgba(17, 37, 63, 0.22), 0 0 18px rgba(37, 99, 235, 0.12) !important;
+  }
+  .dept-card:hover, .doctor-card:hover, .pkg-card:hover, .diag-card:hover, .infra-card:hover, .testi-card:hover {
+    border-color: rgba(249, 115, 22, 0.55) !important;
+    box-shadow: 0 26px 58px -22px rgba(37, 99, 235, 0.38), 0 0 24px rgba(249, 115, 22, 0.32) !important;
+  }
 
   .hero-badges{margin-top:44px;display:flex;gap:34px;flex-wrap:wrap;}
-  .hero-badges .item{font-family:var(--font-mono);font-size:11px;color:rgba(255,255,255,0.42);letter-spacing:0.05em;}
+  .hero-badges .item{font-family:var(--font-mono);font-size:11px;color:rgba(255,255,255,0.7);letter-spacing:0.05em;padding:10px 16px;border-radius:14px;background:rgba(255,255,255,0.04);}
   .hero-badges .item b{display:block;font-family:var(--font-body);font-size:15px;color:#fff;font-weight:700;margin-top:4px;}
 
   /* vitals dashboard floating card */
@@ -1340,15 +1371,15 @@ var deptData = [
 ];
 function getDeptIcon(title){
   switch(title){
-    case 'Cardiology': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20c-4-3.5-7-6.2-7-10a4 4 0 017-2.4A4 4 0 0119 10c0 3.8-3 6.5-7 10z"/><path d="M9 10h6" stroke-linecap="round"/></svg>';
-    case 'Neurology': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 8c0-2.2 1.8-4 4-4h2c2.2 0 4 1.8 4 4v1c0 2.2-1.8 4-4 4h-2c-2.2 0-4-1.8-4-4z"/><path d="M8 15c1.7 1.3 3.3 2 4 2s2.3-.7 4-2"/><path d="M8 12l-2 2M16 12l2 2"/></svg>';
-    case 'Orthopaedics': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 8h10"/><path d="M9 5l2 3 2-3 2 3"/><path d="M8 8v8a2 2 0 002 2h4a2 2 0 002-2V8"/><path d="M6 15l2 2M18 15l-2 2"/></svg>';
-    case 'Pediatrics': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5a3 3 0 013 3v1a3 3 0 01-6 0V8a3 3 0 013-3z"/><path d="M9 10h6"/><path d="M9 14c1.2 1.2 2.3 1.8 3 1.8s1.8-.6 3-1.8"/><path d="M8 18c2.2 1.4 3.8 2.1 4 2.1s1.8-.7 4-2.1"/></svg>';
-    case 'Radiology & Imaging': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="14" rx="3"/><path d="M8 9h8M8 13h5"/><path d="M15 17l2-2"/></svg>';
-    case 'General Surgery': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 5h10"/><path d="M9 5v4h6V5"/><path d="M8 10h8"/><path d="M8 10l-1 9h10l-1-9"/></svg>';
-    case 'Gynaecology': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5a3.5 3.5 0 00-3.5 3.5c0 1.7 1.1 3 2.7 3.5l1.8 1.2V18"/><path d="M12 5a3.5 3.5 0 013.5 3.5c0 1.7-1.1 3-2.7 3.5l-1.8 1.2V18"/><path d="M9 18h6"/></svg>';
-    case 'Dermatology': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 16c-1.2-2.2-2-4.7-2-7 0-3 2.4-5 5-5 2.6 0 5 2 5 5 0 2.3-.8 4.8-2 7"/><path d="M8 16h8"/><path d="M10 16v4h4v-4"/></svg>';
-    case 'ENT': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 8c0-2.2 1.7-4 4-4 2.2 0 4 1.8 4 4v2c0 2.2-1.8 4-4 4h-2"/><path d="M8 10v4c0 2.2 1.8 4 4 4h1"/><path d="M11 16l2 3"/></svg>';
+    case 'Cardiology': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" /><path d="M9 12h2l1 -3l1 6l1.5 -3h1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    case 'Neurology': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4a3 3 0 0 1 3 3v.5a2.5 2.5 0 0 1 2 2.45v.55a2.5 2.5 0 0 1 1.5 2.3v.7a3 3 0 0 1 -3 3h-7a3 3 0 0 1 -3 -3v-.7a2.5 2.5 0 0 1 1.5 -2.3v-.55a2.5 2.5 0 0 1 2 -2.45v-.5a3 3 0 0 1 3 -3z"/><path d="M12 4v12"/><path d="M9 10h6"/><path d="M12 16.5v4.5"/></svg>';
+    case 'Orthopaedics': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 4a2 2 0 1 1 4 0v16a2 2 0 1 1 -4 0z"/><path d="M14 4a2 2 0 1 1 4 0v16a2 2 0 1 1 -4 0z"/><path d="M10 8h4"/><path d="M10 16h4"/></svg>';
+    case 'Pediatrics': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="10" r="5"/><path d="M9.5 10a1.5 1.5 0 1 0 0 -3a1.5 1.5 0 0 0 0 3z"/><path d="M14.5 10a1.5 1.5 0 1 0 0 -3a1.5 1.5 0 0 0 0 3z"/><path d="M9.5 13a3.5 3.5 0 0 0 5 0"/><path d="M7 19c1.5 -1 3 -1.5 5 -1.5s3.5 .5 5 1.5"/></svg>';
+    case 'Radiology & Imaging': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="12" cy="12" r="4"/><path d="M12 8v8"/><path d="M8 12h8"/><circle cx="6" cy="7" r="1" fill="currentColor"/></svg>';
+    case 'General Surgery': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 20l14 -14l-3 -3l-14 14z"/><path d="M13 6l3 3"/><path d="M7 18l-3 3"/><circle cx="17" cy="19" r="2"/><circle cx="19" cy="17" r="2"/></svg>';
+    case 'Gynaecology': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="9" r="5"/><path d="M12 14v7"/><path d="M9 18h6"/><path d="M12 6a3 3 0 0 1 3 3"/></svg>';
+    case 'Dermatology': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3a7 7 0 0 0 -7 7c0 4 7 11 7 11s7 -7 7 -11a7 7 0 0 0 -7 -7z"/><circle cx="12" cy="10" r="2.5"/><path d="M8 17.5h8"/></svg>';
+    case 'ENT': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 4a3 3 0 0 0 -3 3v4a5 5 0 0 0 10 0v-4a3 3 0 0 0 -3 -3z"/><path d="M10 18a4 4 0 0 0 8 0v-5"/><path d="M18 10a2 2 0 1 0 0 -4a2 2 0 0 0 0 4z"/><path d="M7 8h6"/></svg>';
     default: return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v16M4 12h16"/></svg>';
   }
 }
@@ -1399,13 +1430,13 @@ var diagData = [
 ];
 function getDiagIcon(title){
   switch(title){
-    case 'MRI & CT Imaging': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="5" width="16" height="14" rx="3"/><path d="M8 9h8"/><path d="M8 13h5"/><path d="M15 16l2-2"/></svg>';
-    case 'Digital X-Ray': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 6h14v12H5z"/><path d="M8 10h8"/><path d="M9 14h6"/><path d="M8 6l3 4"/><path d="M16 6l-3 4"/></svg>';
-    case 'Pathology Lab': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 3h8"/><path d="M10 3v4a2 2 0 002 2h0a2 2 0 002-2V3"/><path d="M6 10h12"/><path d="M7 10v8a2 2 0 002 2h6a2 2 0 002-2v-8"/></svg>';
-    case 'Ultrasound & Doppler': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 12c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M8 12c0-2.2 1.8-4 4-4s4 1.8 4 4"/><path d="M12 6v12"/><path d="M8 18c1.3 1.6 2.7 2.4 4 2.4s2.7-.8 4-2.4"/></svg>';
-    case 'Cardiac Diagnostics': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h3l2-3 3 6 2-3h6" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 4c-3 0-5 2-5 5 0 3 2 5 5 7 3-2 5-4 5-7 0-3-2-5-5-5z"/></svg>';
-    case 'Home Sample Collection': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 4h10"/><path d="M8 4v3h8V4"/><path d="M6 8h12"/><path d="M7 8l1 10h8l1-10"/></svg>';
-    default: return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>';
+    case 'MRI & CT Imaging': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><path d="M4 12h16"/><path d="M12 4v16"/></svg>';
+    case 'Digital X-Ray': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M9 9l6 6M15 9l-6 6"/><circle cx="12" cy="12" r="7"/></svg>';
+    case 'Pathology Lab': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3h6M10 3v5l-4 7a2 2 0 0 0 1.7 3h8.6a2 2 0 0 0 1.7 -3l-4 -7V3"/><path d="M7.5 14h9"/></svg>';
+    case 'Ultrasound & Doppler': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="3" width="10" height="7" rx="2"/><path d="M12 10v4"/><path d="M5 16c2.5 -2 5.5 -2 8 0s5.5 2 8 0"/><path d="M5 19c2.5 -2 5.5 -2 8 0s5.5 2 8 0"/></svg>';
+    case 'Cardiac Diagnostics': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M6 10h3l1.5 -3l2 6l1.5 -3h4"/><path d="M10 20h4"/><path d="M12 16v4"/></svg>';
+    case 'Home Sample Collection': return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9 -6l9 6v10a2 2 0 0 1 -2 2H5a2 2 0 0 1 -2 -2z"/><path d="M9 21V12h6v9"/><path d="M12 7.5v3M10.5 9h3"/></svg>';
+    default: return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>';
   }
 }
 var diagRow = document.getElementById('diagRow');
@@ -1420,15 +1451,15 @@ if(diagRow){
 
 function getPackageIcon(name){
   switch(name){
-    case 'X-Ray': return '<svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><rect x="18" y="28" width="84" height="64" rx="18" fill="currentColor" opacity="0.18"/><path d="M40 42h40" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><path d="M40 62h24" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><path d="M76 42l10 20" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><circle cx="86" cy="34" r="10" fill="currentColor" opacity="0.32"/></svg>';
-    case 'Sonography': return '<svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><rect x="18" y="28" width="84" height="64" rx="18" fill="currentColor" opacity="0.18"/><path d="M36 72c0-13.3 10.7-24 24-24s24 10.7 24 24" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><path d="M42 72c0-9.9 8.1-18 18-18s18 8.1 18 18" stroke="currentColor" stroke-width="7"/><circle cx="86" cy="34" r="10" fill="currentColor" opacity="0.32"/></svg>';
-    case 'Laboratory Tests': return '<svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><rect x="18" y="28" width="84" height="64" rx="18" fill="currentColor" opacity="0.18"/><path d="M46 40h28" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><path d="M46 58h28" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><path d="M60 40v40" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><path d="M44 84h32" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><circle cx="86" cy="34" r="10" fill="currentColor" opacity="0.32"/></svg>';
-    case 'ECG': return '<svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><rect x="18" y="28" width="84" height="64" rx="18" fill="currentColor" opacity="0.18"/><path d="M36 62h16l8-16 10 32 8-16h16" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="86" cy="34" r="10" fill="currentColor" opacity="0.32"/></svg>';
-    case 'ECHO': return '<svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><rect x="18" y="28" width="84" height="64" rx="18" fill="currentColor" opacity="0.18"/><circle cx="60" cy="60" r="18" stroke="currentColor" stroke-width="7"/><path d="M42 60h36" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><path d="M60 42v36" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><circle cx="86" cy="34" r="10" fill="currentColor" opacity="0.32"/></svg>';
-    case 'TMT': return '<svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><rect x="18" y="28" width="84" height="64" rx="18" fill="currentColor" opacity="0.18"/><path d="M36 72h12l10-20 10 40 8-20h12" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 86h40" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><circle cx="86" cy="34" r="10" fill="currentColor" opacity="0.32"/></svg>';
-    case 'Physiotherapy': return '<svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><rect x="18" y="28" width="84" height="64" rx="18" fill="currentColor" opacity="0.18"/><path d="M44 72l14-14 14 14 14-14" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M48 86h24" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><circle cx="86" cy="34" r="10" fill="currentColor" opacity="0.32"/></svg>';
-    case 'Fetal Medicine': return '<svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><rect x="18" y="28" width="84" height="64" rx="18" fill="currentColor" opacity="0.18"/><path d="M50 62c0-12 8-24 20-24 10 0 20 10 20 24" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><path d="M50 62c0 14 8 22 20 22s20-8 20-22" stroke="currentColor" stroke-width="7"/><circle cx="86" cy="34" r="10" fill="currentColor" opacity="0.32"/></svg>';
-    default: return '<svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><rect x="18" y="28" width="84" height="64" rx="18" fill="currentColor" opacity="0.18"/><path d="M40 58h40M60 36v44M48 48l12-12 12 12" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="86" cy="34" r="10" fill="currentColor" opacity="0.32"/></svg>';
+    case 'X-Ray': return '<svg viewBox="0 0 120 120" fill="none"><rect x="18" y="24" width="84" height="72" rx="16" fill="currentColor" opacity="0.14" stroke="currentColor" stroke-width="4"/><path d="M36 44h48M36 60h32M36 76h24" stroke="currentColor" stroke-width="6" stroke-linecap="round"/><circle cx="82" cy="70" r="10" stroke="currentColor" stroke-width="6"/></svg>';
+    case 'Sonography': return '<svg viewBox="0 0 120 120" fill="none"><rect x="18" y="24" width="84" height="72" rx="16" fill="currentColor" opacity="0.14" stroke="currentColor" stroke-width="4"/><path d="M32 76c0-15.5 12.5-28 28-28s28 12.5 28 28" stroke="currentColor" stroke-width="6" stroke-linecap="round"/><path d="M42 76c0-9.9 8.1-18 18-18s18 8.1 18 18" stroke="currentColor" stroke-width="6"/><circle cx="60" cy="76" r="5" fill="currentColor"/></svg>';
+    case 'Laboratory Tests': return '<svg viewBox="0 0 120 120" fill="none"><rect x="18" y="24" width="84" height="72" rx="16" fill="currentColor" opacity="0.14" stroke="currentColor" stroke-width="4"/><path d="M46 38h28M50 38v20l-16 28a4 4 0 003.4 6h45.2a4 4 0 003.4-6L70 58V38" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 76h40" stroke="currentColor" stroke-width="5" stroke-dasharray="4 4"/></svg>';
+    case 'ECG': return '<svg viewBox="0 0 120 120" fill="none"><rect x="18" y="24" width="84" height="72" rx="16" fill="currentColor" opacity="0.14" stroke="currentColor" stroke-width="4"/><path d="M30 60h16l8-22 14 44 10-22h22" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    case 'ECHO': return '<svg viewBox="0 0 120 120" fill="none"><rect x="18" y="24" width="84" height="72" rx="16" fill="currentColor" opacity="0.14" stroke="currentColor" stroke-width="4"/><circle cx="60" cy="60" r="22" stroke="currentColor" stroke-width="6"/><circle cx="60" cy="60" r="12" stroke="currentColor" stroke-width="5"/><circle cx="60" cy="60" r="4" fill="currentColor"/></svg>';
+    case 'TMT': return '<svg viewBox="0 0 120 120" fill="none"><rect x="18" y="24" width="84" height="72" rx="16" fill="currentColor" opacity="0.14" stroke="currentColor" stroke-width="4"/><path d="M32 78h56M36 78l8-24 14 16 10-28 16 36" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    case 'Physiotherapy': return '<svg viewBox="0 0 120 120" fill="none"><rect x="18" y="24" width="84" height="72" rx="16" fill="currentColor" opacity="0.14" stroke="currentColor" stroke-width="4"/><path d="M38 72c10-20 20-20 30 0s20 20 30 0" stroke="currentColor" stroke-width="6" stroke-linecap="round"/><path d="M38 52c10-20 20-20 30 0s20 20 30 0" stroke="currentColor" stroke-width="6" stroke-linecap="round" opacity="0.6"/></svg>';
+    case 'Fetal Medicine': return '<svg viewBox="0 0 120 120" fill="none"><rect x="18" y="24" width="84" height="72" rx="16" fill="currentColor" opacity="0.14" stroke="currentColor" stroke-width="4"/><circle cx="60" cy="60" r="20" stroke="currentColor" stroke-width="6"/><path d="M48 60c0-6.6 5.4-12 12-12s12 5.4 12 12" stroke="currentColor" stroke-width="5"/></svg>';
+    default: return '<svg viewBox="0 0 120 120" fill="none"><rect x="18" y="24" width="84" height="72" rx="16" fill="currentColor" opacity="0.14" stroke="currentColor" stroke-width="4"/><path d="M40 58h40M60 36v44M48 48l12-12 12 12" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="86" cy="34" r="10" fill="currentColor" opacity="0.32"/></svg>';
   }
 }
 var pkgData = [
